@@ -48,6 +48,7 @@ public class ChatScreen extends AppCompatActivity implements View.OnClickListene
         chatMessagesList = new ArrayList<>();
         chatArrayAdapter = new ArrayAdapter(this,
                 android.R.layout.simple_list_item_1, chatMessagesList);
+        chatListView.setAdapter(chatArrayAdapter);
         setUpChatHistory();
     }
 
@@ -81,7 +82,7 @@ public class ChatScreen extends AppCompatActivity implements View.OnClickListene
                             chatMessagesList.add(
                                     message.get("sender")+ ": "+ message.get("message"));
                         }
-                        chatListView.setAdapter(chatArrayAdapter);
+                        chatArrayAdapter.notifyDataSetChanged();
                     }
                 }
             });
