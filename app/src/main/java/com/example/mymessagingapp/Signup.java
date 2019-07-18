@@ -38,7 +38,7 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void transitionToHomeScreen() {
-        Intent intent = new Intent(this, UsersScreen.class);
+        Intent intent = new Intent(this, TabbedScreen.class);
         startActivity(intent);
         finish();
     }

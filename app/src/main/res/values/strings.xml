@@ -5,4 +5,7 @@
     <!-- Change the following strings as required -->
     <string name="back4app_app_id">uXRA0E2qv5hgIG1DFlZgtCXzh0dFaFVNknVX9XAt</string>
     <string name="back4app_client_key">SI1X4RYGqUfEl2ULQBM9w4ieaIXHVXBoCu918PHJ</string>
+    <string name="title_activity_tabbed_screen">Profile</string>
+    <string name="tab_text_1">Profile</string>
+    <string name="tab_text_2">Users</string>
 </resources>

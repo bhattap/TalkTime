@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void transitionToHomeScreen() {
-        Intent intent = new Intent(this, UsersScreen.class);
+        Intent intent = new Intent(this, TabbedScreen.class);
         startActivity(intent);
         finish();
     }
