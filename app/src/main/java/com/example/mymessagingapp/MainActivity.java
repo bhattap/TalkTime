@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             if (user != null && e==null){
                                     transitionToHomeScreen();
                                     FancyToast.makeText(MainActivity.this,
-                                            "Welcome back", Toast.LENGTH_SHORT,
+                                            "Welcome back " + user.get("firstName"), Toast.LENGTH_SHORT,
                                             FancyToast.SUCCESS, false).show();
                                 } else {
                                 FancyToast.makeText(MainActivity.this,

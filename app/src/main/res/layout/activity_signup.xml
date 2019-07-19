@@ -87,7 +87,38 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPassword" />
+                <TextView
+                    android:id="@+id/textfirstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="First Name"
+                    android:textAllCaps="true"
+                    android:textColor="#9169B9"
+                    android:textStyle="bold" />
 
+                <EditText
+                    android:id="@+id/firstNameSignup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+                <TextView
+                    android:id="@+id/textlastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="Last Name"
+                    android:textAllCaps="true"
+                    android:textColor="#9169B9"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/lastNameSignup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -18,7 +18,7 @@ import com.shashank.sony.fancytoastlib.FancyToast;
 public class Signup extends AppCompatActivity implements View.OnClickListener {
 
     private Button signupBtn2;
-    private EditText emailSignup, usernameSignup, passwordSignup;
+    private EditText emailSignup, usernameSignup, passwordSignup, firstNameSignup, lastNameSignup;
     private TextView backToLogin;
 
     @Override
@@ -32,6 +32,8 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
         usernameSignup = findViewById(R.id.usernameSignup);
         passwordSignup = findViewById(R.id.passwordSignup);
         backToLogin = findViewById(R.id.backToLogin);
+        firstNameSignup = findViewById(R.id.firstNameSignup);
+        lastNameSignup = findViewById(R.id.lastNameSignup);
 
         signupBtn2.setOnClickListener(this);
         backToLogin.setOnClickListener(this);
@@ -50,7 +52,9 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
             case (R.id.signupBtn2):
                 if (emailSignup.getText().toString().isEmpty()
                         || usernameSignup.getText().toString().isEmpty()
-                        || passwordSignup.getText().toString().isEmpty()) {
+                        || passwordSignup.getText().toString().isEmpty()
+                        || firstNameSignup.getText().toString().isEmpty()
+                        || lastNameSignup.getText().toString().isEmpty()) {
                     FancyToast.makeText(this, "All fields required",
                             Toast.LENGTH_SHORT, FancyToast.INFO,
                             false).show();
@@ -73,12 +77,14 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
         newUSer.setEmail(emailSignup.getText().toString());
         newUSer.setUsername(usernameSignup.getText().toString());
         newUSer.setPassword(passwordSignup.getText().toString());
+        newUSer.put("firstName", firstNameSignup.getText().toString());
+        newUSer.put("lastName", lastNameSignup.getText().toString());
         newUSer.signUpInBackground(new SignUpCallback() {
             @Override
             public void done(ParseException e) {
                 if (e==null){
                     transitionToHomeScreen();
-                    FancyToast.makeText(Signup.this, "Welcome!",
+                    FancyToast.makeText(Signup.this, "Welcome " + firstNameSignup.getText(),
                             Toast.LENGTH_SHORT, FancyToast.SUCCESS,
                             false).show();
                 }else{
