@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
@@ -24,13 +25,15 @@ import com.parse.ParseUser;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class UsersScreen extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ListView usersListView;
-    private ArrayList<String> allUsersNames;
-    private ArrayAdapter userArrayAdapter;
+    private ArrayList<Map<String,String>> userNamePlusNames;
+    private SimpleAdapter userArrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +42,11 @@ public class UsersScreen extends AppCompatActivity implements AdapterView.OnItem
         setTitle("All Users");
 
         usersListView = findViewById(R.id.usersListView);
-        allUsersNames = new ArrayList<>();
-        userArrayAdapter = new ArrayAdapter(this,
-                android.R.layout.simple_list_item_1, allUsersNames);
+        userNamePlusNames = new ArrayList<>();
+        userArrayAdapter = new SimpleAdapter(this, userNamePlusNames,
+                android.R.layout.simple_list_item_2,
+                new String[] {"fullName", "username"},
+                new int[] {android.R.id.text1, android.R.id.text2});
         getAllUsers();
         usersListView.setOnItemClickListener(this);
     }
@@ -86,7 +91,11 @@ public class UsersScreen extends AppCompatActivity implements AdapterView.OnItem
                 public void done(List<ParseUser> parseUsersList, ParseException e) {
                     if (parseUsersList.size()>0 && e==null) {
                         for (ParseUser parseUser : parseUsersList) {
-                            allUsersNames.add(parseUser.getUsername());
+                            HashMap<String, String> newHashMap = new HashMap<>();
+                            newHashMap.put("fullName", parseUser.get("firstName")
+                                            + " " + parseUser.get("lastName"));
+                            newHashMap.put("username", parseUser.getUsername());
+                            userNamePlusNames.add(newHashMap);
                         }
                         usersListView.setAdapter(userArrayAdapter);
                     }
@@ -100,7 +109,7 @@ public class UsersScreen extends AppCompatActivity implements AdapterView.OnItem
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(this, ChatScreen.class);
-        intent.putExtra("recipient", allUsersNames.get(position));
+        intent.putExtra("recipient", userNamePlusNames.get(position).get("username"));
         startActivity(intent);
     }
 }
