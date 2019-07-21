@@ -108,7 +108,7 @@ public class UsersScreen extends AppCompatActivity implements AdapterView.OnItem
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(this, ChatScreen.class);
+        Intent intent = new Intent(this, BubbleChatScreen.class);
         intent.putExtra("recipient", userNamePlusNames.get(position).get("username"));
         intent.putExtra("recipientName", userNamePlusNames.get(position).get("fullName"));
         startActivity(intent);
