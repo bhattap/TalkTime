@@ -28,7 +28,7 @@ public class ChatScreen extends AppCompatActivity implements View.OnClickListene
     private ImageView sendMessageBtn;
     private ListView chatListView;
     private EditText messageEditText;
-    private String recipient, sender;
+    private String recipient, recipientName, sender;
     private ArrayAdapter chatArrayAdapter;
     private ArrayList<String> chatMessagesList;
     @Override
@@ -37,8 +37,10 @@ public class ChatScreen extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_chat_screen);
         Intent receivedIntent = getIntent();
         recipient = receivedIntent.getStringExtra("recipient");
+        recipientName = receivedIntent.getStringExtra("recipientName");
         sender = ParseUser.getCurrentUser().getUsername();
-        setTitle(recipient);
+        //senderName = ParseUser.getCurrentUser().get("firstName")+ LAST NAME
+        setTitle(recipientName);
 
         chatListView = findViewById(R.id.chatListView);
         messageEditText = findViewById(R.id.messageEditText);
