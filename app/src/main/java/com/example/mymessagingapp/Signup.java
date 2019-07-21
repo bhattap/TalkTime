@@ -1,8 +1,11 @@
 package com.example.mymessagingapp;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,12 +23,22 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
     private Button signupBtn2;
     private EditText emailSignup, usernameSignup, passwordSignup, firstNameSignup, lastNameSignup;
     private TextView backToLogin;
+    private ConstraintLayout constraintLayout;
+    private AnimationDrawable animationDrawable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        setTitle("Sign Up");
+        //setTitle("Sign Up");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+        constraintLayout = findViewById(R.id.constr2);
+        animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(10);
+        animationDrawable.setExitFadeDuration(5000);
+        animationDrawable.start();
 
         signupBtn2 = findViewById(R.id.signupBtn2);
         emailSignup = findViewById(R.id.emailSignup);

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constr2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
@@ -11,7 +12,7 @@
         android:id="@+id/relativeLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -46,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:text="Enter your email address"
                     android:textAllCaps="true"
-                    android:textColor="#9169B9"
+                    android:textColor="#ed4264"
                     android:textStyle="bold" />
 
                 <EditText
@@ -62,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:text="Create a Username"
                     android:textAllCaps="true"
-                    android:textColor="#9169B9"
+                    android:textColor="#ed4264"
                     android:textStyle="bold" />
 
                 <EditText
@@ -76,10 +77,9 @@
                     android:id="@+id/textpassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
                     android:text="Choose a Password"
                     android:textAllCaps="true"
-                    android:textColor="#9169B9"
+                    android:textColor="#ed4264"
                     android:textStyle="bold" />
 
                 <EditText
@@ -93,10 +93,9 @@
                     android:id="@+id/textfirstname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
                     android:text="First Name"
                     android:textAllCaps="true"
-                    android:textColor="#9169B9"
+                    android:textColor="#ed4264"
                     android:textStyle="bold" />
 
                 <EditText
@@ -110,10 +109,9 @@
                     android:id="@+id/textlastname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
                     android:text="Last Name"
                     android:textAllCaps="true"
-                    android:textColor="#9169B9"
+                    android:textColor="#ed4264"
                     android:textStyle="bold" />
 
                 <EditText
