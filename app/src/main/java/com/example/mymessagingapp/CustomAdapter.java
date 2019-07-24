@@ -39,15 +39,17 @@ public class CustomAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View vi = convertView;
-        if (convertView==null){
+        //if (convertView==null){
             if(listChat.get(position).isSend()){
                 vi=inflater.inflate(R.layout.message_sent, null);
             } else{
                 vi=inflater.inflate(R.layout.message_received, null);
             }
-        }
-        BubbleTextView bubbleTextView = (BubbleTextView) vi.findViewById(R.id.bubbleChat);
-        bubbleTextView.setText(listChat.get(position).chatMessage);
+        //} else {
+
+        //}
+        BubbleTextView bubbleTextView = vi.findViewById(R.id.bubbleChat);
+        bubbleTextView.setText(listChat.get(position).getChatMessage());
 
         return vi;
     }

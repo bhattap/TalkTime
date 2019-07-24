@@ -4,22 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FAD8CE"
     tools:context=".BubbleChatScreen">
 
     <ListView
         android:id="@+id/bubbleLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="100dp"
+        android:divider="@null"
+        android:dividerHeight="0dp"
         app:layout_constraintBottom_toTopOf="@+id/messageContent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:divider="@null"
-        android:dividerHeight="0dp"
         android:stackFromBottom="true"
-        android:transcriptMode="alwaysScroll"
-        />
+        android:transcriptMode="alwaysScroll"/>
 
     <EditText
         android:id="@+id/messageContent"

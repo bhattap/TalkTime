@@ -3,12 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/searchBtn"
-        android:icon="@drawable/ic_search_black_24dp"
-        android:title="Search"
-        app:actionViewClass="android.widget.SearchView"
-        app:showAsAction="always" />
-    <item
         android:id="@+id/logoutBtn"
         android:title="Log Out"
         app:showAsAction="never" />

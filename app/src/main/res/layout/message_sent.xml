@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/bubbleChat"
         android:text=""
+        android:textSize="15dp"
         android:padding="10dp"
         android:textColor="@android:color/white"
         app:arrowWidth="8dp"
@@ -18,5 +19,5 @@
         app:arrowPosition="14dp"
         app:arrowLocation="left"
         app:arrowCenter="true"
-        app:bubbleColor="#006BBB"/>
+        app:bubbleColor="#0080BB"/>
 </RelativeLayout>

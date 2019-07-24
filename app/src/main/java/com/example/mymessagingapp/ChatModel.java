@@ -13,15 +13,7 @@ public class ChatModel {
         return chatMessage;
     }
 
-    public void setChatMessage(String chatMessage) {
-        this.chatMessage = chatMessage;
-    }
-
     public boolean isSend() {
         return isSend;
-    }
-
-    public void setSend(boolean send) {
-        isSend = send;
     }
 }
